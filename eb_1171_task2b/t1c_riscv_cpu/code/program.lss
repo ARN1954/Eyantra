@@ -1,0 +1,471 @@
+
+.temp.file.elf:     file format elf32-littleriscv
+
+SYMBOL TABLE:
+00000000 l    d  .init	00000000 .init
+00000054 l    d  .text	00000000 .text
+02000000 l    d  .data	00000000 .data
+02000000 l    d  .bss	00000000 .bss
+02000000 l    d  .stack	00000000 .stack
+00000000 l    d  .riscv.attributes	00000000 .riscv.attributes
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    df *ABS*	00000000 tls.c
+00000000 l    df *ABS*	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+0000014f l       .debug_info	00000000 
+00000000 g       *ABS*	00000000 __data_size
+02000800 g       .data	00000000 __global_pointer$
+02000000 g       .bss	00000000 __tls_base
+00000400 g       *ABS*	00000000 __flash_size
+00000008 g       *ABS*	00000000 __stack_size
+00000000 g       *ABS*	00000000 __bss_size
+00000398 g     F .text	00000024 memcpy
+02000000 g       .bss	00000000 __bss_end
+0000014f  w      .debug_info	00000000 .hidden path_planner.c.9b868450
+00000000 g       *ABS*	00000000 __tbss_size
+00000390 g     F .text	00000008 _set_tls
+00000000 g     F .init	00000000 _start
+02000000 g       *ABS*	00000000 __ram
+02000000 g       .bss	00000000 __data_end
+000003d8 g       .text	00000000 __text_end
+02000000 g       .bss	00000000 __bss_start
+000003bc g     F .text	0000001c memset
+00000054 g     F .text	0000033c main
+00000040 g       *ABS*	00000000 __ram_size
+02000040 g       .init	00000000 __stack
+00000000 g     F *ABS*	00000000 vfscanf
+000003d8 g       *ABS*	00000000 __data_source
+00000000 g       *ABS*	00000000 __flash
+02000000 g       .data	00000000 __data_start
+00000000 g     F *ABS*	00000000 vfprintf
+
+
+
+Disassembly of section .init:
+
+00000000 <_start>:
+   0:	    02000117          	auipc	x2,0x2000
+   4:	    04010113          	addi	x2,x2,64 # 2000040 <__stack>
+   8:	    02000197          	auipc	x3,0x2000
+   c:	    7f818193          	addi	x3,x3,2040 # 2000800 <__global_pointer$>
+  10:	    02000517          	auipc	x10,0x2000
+  14:	    ff050513          	addi	x10,x10,-16 # 2000000 <__bss_end>
+  18:	    3d800593          	addi	x11,x0,984
+  1c:	    00000613          	addi	x12,x0,0
+  20:	    378000ef          	jal	x1,398 <memcpy>
+  24:	    02000517          	auipc	x10,0x2000
+  28:	    fdc50513          	addi	x10,x10,-36 # 2000000 <__bss_end>
+  2c:	    00000593          	addi	x11,x0,0
+  30:	    00000613          	addi	x12,x0,0
+  34:	    388000ef          	jal	x1,3bc <memset>
+  38:	    02000517          	auipc	x10,0x2000
+  3c:	    fc850513          	addi	x10,x10,-56 # 2000000 <__bss_end>
+  40:	    350000ef          	jal	x1,390 <_set_tls>
+  44:	    00000513          	addi	x10,x0,0
+  48:	    00000593          	addi	x11,x0,0
+  4c:	    008000ef          	jal	x1,54 <main>
+  50:	/-- 0000006f          	jal	x0,50 <__ram_size+0x10>
+
+Disassembly of section .text:
+
+00000054 <main>:
+     ### 
+     ### #endif
+     ### 
+     ### // main function
+     ### int main(int argc, char const *argv[])
+     ### {
+  54:	                      fd010113          	addi	x2,x2,-48
+     ###     // #define encoded  (* (volatile uint32_t * ) 0x02000324)
+     ###     // #define current  (* (volatile uint8_t * ) 0x02000328)
+     ### 
+     ### #endif
+     ### 
+     ###     graph[0] = 0b00001011001100110101001100000000;
+  58:	                      0b3357b7          	lui	x15,0xb335
+     ### {
+  5c:	                      02112623          	sw	x1,44(x2)
+  60:	                      02812423          	sw	x8,40(x2)
+     ###     graph[0] = 0b00001011001100110101001100000000;
+  64:	                      30078793          	addi	x15,x15,768 # b335300 <__global_pointer$+0x9334b00>
+  68:	                      02000437          	lui	x8,0x2000
+  6c:	                      00f42823          	sw	x15,16(x8) # 2000010 <__bss_end+0x10>
+     ###     graph[1] = 0b00000011010110100001010000000000;
+  70:	                      035a17b7          	lui	x15,0x35a1
+  74:	                      40078793          	addi	x15,x15,1024 # 35a1400 <__global_pointer$+0x15a0c00>
+  78:	                      00f42a23          	sw	x15,20(x8)
+     ###     graph[2] = 0b00001100000110100010001000101010;
+  7c:	                      0c1a27b7          	lui	x15,0xc1a2
+  80:	                      22a78793          	addi	x15,x15,554 # c1a222a <__global_pointer$+0xa1a1a2a>
+  84:	                      00f42c23          	sw	x15,24(x8)
+     ###     graph[3] = 0b00010010000000000000000000000000;
+  88:	                      120007b7          	lui	x15,0x12000
+  8c:	                      00f42e23          	sw	x15,28(x8)
+     ###     graph[4] = 0b00010010000000000000000000000000;
+  90:	                      02f42023          	sw	x15,32(x8)
+     ###     graph[5] = 0b00010010000000000000000000000000;
+  94:	                      02f42223          	sw	x15,36(x8)
+     ###     graph[6] = 0b00000011001110100100001001001010;
+  98:	                      033a47b7          	lui	x15,0x33a4
+  9c:	                      24a78793          	addi	x15,x15,586 # 33a424a <__global_pointer$+0x13a3a4a>
+  a0:	                      02f42423          	sw	x15,40(x8)
+     ###     graph[7] = 0b00110010000000000000000000000000;
+  a4:	                      320007b7          	lui	x15,0x32000
+  a8:	                      02f42623          	sw	x15,44(x8)
+     ###     graph[8] = 0b00110010000000000000000000000000;
+  ac:	                      02f42823          	sw	x15,48(x8)
+     ###     graph[9] = 0b00110010000000000000000000000000;
+  b0:	                      02f42a23          	sw	x15,52(x8)
+     ###     graph[10] = 0b11010011110000100000001101011101;
+  b4:	                      d3c207b7          	lui	x15,0xd3c20
+  b8:	                      35d78793          	addi	x15,x15,861 # d3c2035d <__global_pointer$+0xd1c1fb5d>
+  bc:	                      02f42c23          	sw	x15,56(x8)
+     ###     graph[11] = 0b01010101000010100110001110011010;
+  c0:	                      550a67b7          	lui	x15,0x550a6
+  c4:	                      39a78793          	addi	x15,x15,922 # 550a639a <__global_pointer$+0x530a5b9a>
+  c8:	                      02f42e23          	sw	x15,60(x8)
+     ###     graph[12] = 0b01011010011101000110100100000000;
+  cc:	                      5a7477b7          	lui	x15,0x5a747
+  d0:	                      90078793          	addi	x15,x15,-1792 # 5a746900 <__global_pointer$+0x58746100>
+  d4:	                      04f42023          	sw	x15,64(x8)
+     ###     graph[13] = 0b01100001000000000000000000000000;
+  d8:	                      610007b7          	lui	x15,0x61000
+  dc:	                      04f42223          	sw	x15,68(x8)
+     ###     graph[14] = 0b01111001100000100110001000000000;
+  e0:	                      798267b7          	lui	x15,0x79826
+  e4:	                      20078793          	addi	x15,x15,512 # 79826200 <__global_pointer$+0x77825a00>
+  e8:	                      04f42423          	sw	x15,72(x8)
+     ###     graph[15] = 0b01110001000000000000000000000000;
+  ec:	                      710007b7          	lui	x15,0x71000
+  f0:	                      04f42623          	sw	x15,76(x8)
+     ###     graph[16] = 0b01110010100010011001000100000000;
+  f4:	                      728997b7          	lui	x15,0x72899
+  f8:	                      10078793          	addi	x15,x15,256 # 72899100 <__global_pointer$+0x70898900>
+  fc:	                      04f42823          	sw	x15,80(x8)
+     ###     graph[17] = 0b10000001000000000000000000000000;
+ 100:	                      810007b7          	lui	x15,0x81000
+ 104:	                      04f42a23          	sw	x15,84(x8)
+     ###     graph[18] = 0b10000001100110111010100100000000;
+ 108:	                      819bb7b7          	lui	x15,0x819bb
+ 10c:	                      90078793          	addi	x15,x15,-1792 # 819ba900 <__global_pointer$+0x7f9ba100>
+ 110:	                      04f42c23          	sw	x15,88(x8)
+     ###     graph[19] = 0b10010011010110101010000100000000;
+ 114:	                      935aa7b7          	lui	x15,0x935aa
+ 118:	                      10078793          	addi	x15,x15,256 # 935aa100 <__global_pointer$+0x915a9900>
+ 11c:	                      04f42e23          	sw	x15,92(x8)
+     ###     graph[20] = 0b10011001000000000000000000000000;
+ 120:	                      990007b7          	lui	x15,0x99000
+ 124:	                      06f42023          	sw	x15,96(x8)
+     ###     graph[21] = 0b10010010101100011011101000000000;
+ 128:	                      92b1c7b7          	lui	x15,0x92b1c
+ 12c:	                      a0078793          	addi	x15,x15,-1536 # 92b1ba00 <__global_pointer$+0x90b1b200>
+ 130:	                      06f42223          	sw	x15,100(x8)
+     ###     graph[22] = 0b10101001000000000000000000000000;
+ 134:	                      a90007b7          	lui	x15,0xa9000
+ 138:	                      06f42423          	sw	x15,104(x8)
+     ###     graph[23] = 0b11110001110000111010101000000000;
+ 13c:	                      f1c3b7b7          	lui	x15,0xf1c3b
+ 140:	                      a0078793          	addi	x15,x15,-1536 # f1c3aa00 <__global_pointer$+0xefc3a200>
+ 144:	                      06f42623          	sw	x15,108(x8)
+     ###     graph[24] = 0b11001001101110110101001000000000;
+ 148:	                      c9bb57b7          	lui	x15,0xc9bb5
+ 14c:	                      20078793          	addi	x15,x15,512 # c9bb5200 <__global_pointer$+0xc7bb4a00>
+ 150:	                      06f42823          	sw	x15,112(x8)
+     ###     graph[25] = 0b11000001000000000000000000000000;
+ 154:	                      c10007b7          	lui	x15,0xc1000
+ 158:	                      06f42a23          	sw	x15,116(x8)
+     ###     graph[26] = 0b01010011110110011110010000000000;
+ 15c:	                      53d9e7b7          	lui	x15,0x53d9e
+ 160:	                      40078793          	addi	x15,x15,1024 # 53d9e400 <__global_pointer$+0x51d9dc00>
+ 164:	                      06f42c23          	sw	x15,120(x8)
+     ###     graph[27] = 0b11010001000000000000000000000000;
+ 168:	                      d10007b7          	lui	x15,0xd1000
+ 16c:	                      06f42e23          	sw	x15,124(x8)
+     ###     graph[28] = 0b11010100111010011111001000000000;
+ 170:	                      d4e9f7b7          	lui	x15,0xd4e9f
+ 174:	                      20078793          	addi	x15,x15,512 # d4e9f200 <__global_pointer$+0xd2e9ea00>
+ 178:	                      08f42023          	sw	x15,128(x8)
+     ###     graph[29] = 0b11100001000000000000000000000000;
+ 17c:	                      e10007b7          	lui	x15,0xe1000
+ 180:	                      08f42223          	sw	x15,132(x8)
+     ###     graph[30] = 0b11111001111000101011100100000000;
+ 184:	                      f9e2c7b7          	lui	x15,0xf9e2c
+ 188:	                      90078793          	addi	x15,x15,-1792 # f9e2b900 <__global_pointer$+0xf7e2b100>
+ 18c:	                      08f42423          	sw	x15,136(x8)
+     ###     graph[31] = 0b11110001000000000000000000000000;
+ 190:	                      f10007b7          	lui	x15,0xf1000
+ 194:	                      08f42623          	sw	x15,140(x8)
+     ### 
+     ###     *front=0;
+     ###     *rear=0;
+     ### 
+     ###     for(int8_t i =0;i<V;i++){
+     ###         dist[i]=INT8_MAX;                
+ 198:	                      07f00593          	addi	x11,x0,127
+     ###     *front=0;
+ 19c:	                      0e040c23          	sb	x0,248(x8)
+     ###     *rear=0;
+ 1a0:	                      0e040ca3          	sb	x0,249(x8)
+     ###         dist[i]=INT8_MAX;                
+ 1a4:	                      02000613          	addi	x12,x0,32
+ 1a8:	                      09040513          	addi	x10,x8,144
+ 1ac:	                      210000ef          	jal	x1,3bc <memset>
+     ###     }
+     ###     *visited = 0;
+     ###     dist[START_POINT] = 0;
+ 1b0:	                      00044783          	lbu	x15,0(x8)
+     ###     *visited = 0;
+ 1b4:	                      0e042e23          	sw	x0,252(x8)
+     ###     while (*front != *rear)
+     ###     {
+     ### 
+     ###         *node = queue[*front];
+     ###         *front = (*front + 1) % V;        
+     ###         *visited |= (1 << *node);
+ 1b8:	                      00100593          	addi	x11,x0,1
+     ###     dist[START_POINT] = 0;
+ 1bc:	                      0ff7f793          	andi	x15,x15,255
+ 1c0:	                      00f407b3          	add	x15,x8,x15
+ 1c4:	                      08078823          	sb	x0,144(x15) # f1000090 <__global_pointer$+0xeefff890>
+     ###     queue[*rear] = START_POINT;
+ 1c8:	                      0f944783          	lbu	x15,249(x8)
+ 1cc:	                      00044703          	lbu	x14,0(x8)
+     ###             weights[i] = (graph[*node] >> (24 - i * 8)) & 0x7;    // Extract the weight (3 bits)
+     ### 
+     ###             // If no valid neighbor or weight, mark as -1
+     ###             if (neighbors[i] == 0 && weights[i] == 0)
+     ###             {
+     ###                 neighbors[i] = -1;
+ 1d0:	                      fff00513          	addi	x10,x0,-1
+     ###     queue[*rear] = START_POINT;
+ 1d4:	                      00f407b3          	add	x15,x8,x15
+ 1d8:	                      0ae78823          	sb	x14,176(x15)
+     ###     *rear = (*rear + 1) % V;
+ 1dc:	                      0f944783          	lbu	x15,249(x8)
+ 1e0:	                      00178793          	addi	x15,x15,1
+ 1e4:	                      01f7f793          	andi	x15,x15,31
+ 1e8:	                      0ef40ca3          	sb	x15,249(x8)
+     ###     while (*front != *rear)
+ 1ec:	                      020007b7          	lui	x15,0x2000
+     ###                 weights[i] = -1;
+     ###             }
+     ###             if (neighbors[i] != -1 && *visited & (1 << *node))
+     ###             {
+     ###                 if (dist[*node] + weights[i] < dist[neighbors[i]])
+ 1f0:	                      09078813          	addi	x16,x15,144 # 2000090 <__stack+0x50>
+     ###         for (uint8_t i = 0; i < 4; i++)
+ 1f4:	                      0d478893          	addi	x17,x15,212
+     ###     while (*front != *rear)
+ 1f8:	/-------------------> 0f87c703          	lbu	x14,248(x15)
+ 1fc:	|                     0f97c683          	lbu	x13,249(x15)
+ 200:	|                 /-- 06e69863          	bne	x13,x14,270 <path_planner.c.9b868450+0x121>
+     ###                 }
+     ###             }
+     ###         }
+     ###     }
+     ### 
+     ###     *current = END_POINT;
+ 204:	|                 |   0047c703          	lbu	x14,4(x15)
+     ###     while (*current != START_POINT)
+ 208:	|                 |   020006b7          	lui	x13,0x2000
+     ###     *current = END_POINT;
+ 20c:	|                 |   0ee78da3          	sb	x14,251(x15)
+     ###     uint8_t idx = 0;
+ 210:	|                 |   00000793          	addi	x15,x0,0
+     ###     while (*current != START_POINT)
+ 214:	|  /--------------|-> 0006c583          	lbu	x11,0(x13) # 2000000 <__bss_end>
+ 218:	|  |              |   0fb6c603          	lbu	x12,251(x13)
+     ###     {
+     ###         path_planned[idx++] = *current;
+ 21c:	|  |              |   00078713          	addi	x14,x15,0
+ 220:	|  |              |   02010513          	addi	x10,x2,32
+ 224:	|  |              |   00178793          	addi	x15,x15,1
+     ###     while (*current != START_POINT)
+ 228:	|  |              |   0ff5f593          	andi	x11,x11,255
+     ###         path_planned[idx++] = *current;
+ 22c:	|  |              |   0ff7f793          	andi	x15,x15,255
+ 230:	|  |              |   00e50733          	add	x14,x10,x14
+     ###     while (*current != START_POINT)
+ 234:	|  |     /--------|-- 12b61c63          	bne	x12,x11,36c <path_planner.c.9b868450+0x21d>
+     ###         *current = prev[*current];
+     ###     }
+     ###     path_planned[idx++] = START_POINT;
+ 238:	|  |     |        |   0006c683          	lbu	x13,0(x13)
+ 23c:	|  |     |        |   fed70023          	sb	x13,-32(x14)
+     ### 
+     ###     // ##############################################
+     ### 
+     ###     // the node values are written into data memory sequentially.
+     ###     for (int i = idx - 1; i >= 0; --i)
+ 240:	|  |     |        |   fff00713          	addi	x14,x0,-1
+     ###     {
+     ###         NODE_POINT = path_planned[i];
+ 244:	|  |     |        |   020006b7          	lui	x13,0x2000
+     ###     for (int i = idx - 1; i >= 0; --i)
+ 248:	|  |  /--|--------|-> fff78793          	addi	x15,x15,-1
+ 24c:	|  |  |  |  /-----|-- 12e79a63          	bne	x15,x14,380 <path_planner.c.9b868450+0x231>
+     ###     }
+     ###     // Path Planning Computation Done Flag
+     ###     CPU_DONE = 1;
+ 250:	|  |  |  |  |     |   020007b7          	lui	x15,0x2000
+ 254:	|  |  |  |  |     |   00100713          	addi	x14,x0,1
+ 258:	|  |  |  |  |     |   00e78623          	sb	x14,12(x15) # 200000c <__bss_end+0xc>
+     ###     _put_str("################################\n");
+     ### 
+     ### #endif
+     ### 
+     ###     return 0;
+     ### }
+ 25c:	|  |  |  |  |     |   02c12083          	lw	x1,44(x2)
+ 260:	|  |  |  |  |     |   02812403          	lw	x8,40(x2)
+ 264:	|  |  |  |  |     |   00000513          	addi	x10,x0,0
+ 268:	|  |  |  |  |     |   03010113          	addi	x2,x2,48
+ 26c:	|  |  |  |  |     |   00008067          	jalr	x0,0(x1)
+     ###         *node = queue[*front];
+ 270:	|  |  |  |  |     \-> 00e786b3          	add	x13,x15,x14
+     ###         *front = (*front + 1) % V;        
+ 274:	|  |  |  |  |         00170713          	addi	x14,x14,1
+     ###         *node = queue[*front];
+ 278:	|  |  |  |  |         0b06c683          	lbu	x13,176(x13) # 20000b0 <__stack+0x70>
+     ###         *front = (*front + 1) % V;        
+ 27c:	|  |  |  |  |         01f77713          	andi	x14,x14,31
+ 280:	|  |  |  |  |         0ee78c23          	sb	x14,248(x15)
+     ###         *visited |= (1 << *node);
+ 284:	|  |  |  |  |         0fc7a703          	lw	x14,252(x15)
+     ###         *node = queue[*front];
+ 288:	|  |  |  |  |         0ed78d23          	sb	x13,250(x15)
+     ###         *visited |= (1 << *node);
+ 28c:	|  |  |  |  |         00d596b3          	sll	x13,x11,x13
+ 290:	|  |  |  |  |         00e6e6b3          	or	x13,x13,x14
+ 294:	|  |  |  |  |         0ed7ae23          	sw	x13,252(x15)
+ 298:	|  |  |  |  |         0d078713          	addi	x14,x15,208
+ 29c:	|  |  |  |  |         01b00313          	addi	x6,x0,27
+     ###             neighbors[i] = (graph[*node] >> (27 - i * 8)) & 0x1F; // Extract the neighbor ID (5 bits)
+ 2a0:	|  |  |  |  |  /----> 0fa7c683          	lbu	x13,250(x15)
+ 2a4:	|  |  |  |  |  |      00470e13          	addi	x28,x14,4
+ 2a8:	|  |  |  |  |  |      00269693          	slli	x13,x13,0x2
+ 2ac:	|  |  |  |  |  |      00d786b3          	add	x13,x15,x13
+ 2b0:	|  |  |  |  |  |      0106a683          	lw	x13,16(x13)
+ 2b4:	|  |  |  |  |  |      0066d6b3          	srl	x13,x13,x6
+ 2b8:	|  |  |  |  |  |      01f6f693          	andi	x13,x13,31
+ 2bc:	|  |  |  |  |  |      00d70023          	sb	x13,0(x14)
+     ###             weights[i] = (graph[*node] >> (24 - i * 8)) & 0x7;    // Extract the weight (3 bits)
+ 2c0:	|  |  |  |  |  |      0fa7c603          	lbu	x12,250(x15)
+ 2c4:	|  |  |  |  |  |      ffd30693          	addi	x13,x6,-3
+ 2c8:	|  |  |  |  |  |      00261613          	slli	x12,x12,0x2
+ 2cc:	|  |  |  |  |  |      00c78633          	add	x12,x15,x12
+ 2d0:	|  |  |  |  |  |      01062603          	lw	x12,16(x12)
+ 2d4:	|  |  |  |  |  |      00d656b3          	srl	x13,x12,x13
+     ###             if (neighbors[i] == 0 && weights[i] == 0)
+ 2d8:	|  |  |  |  |  |      00074603          	lbu	x12,0(x14)
+     ###             weights[i] = (graph[*node] >> (24 - i * 8)) & 0x7;    // Extract the weight (3 bits)
+ 2dc:	|  |  |  |  |  |      0076f693          	andi	x13,x13,7
+ 2e0:	|  |  |  |  |  |      00d70223          	sb	x13,4(x14)
+     ###             if (neighbors[i] == 0 && weights[i] == 0)
+ 2e4:	|  |  |  |  |  |      00c6e6b3          	or	x13,x13,x12
+ 2e8:	|  |  |  |  |  |  /-- 00069663          	bne	x13,x0,2f4 <path_planner.c.9b868450+0x1a5>
+     ###                 neighbors[i] = -1;
+ 2ec:	|  |  |  |  |  |  |   00a70023          	sb	x10,0(x14)
+     ###                 weights[i] = -1;
+ 2f0:	|  |  |  |  |  |  |   00a70223          	sb	x10,4(x14)
+     ###             if (neighbors[i] != -1 && *visited & (1 << *node))
+ 2f4:	|  |  |  |  |  |  \-> 0fa7c683          	lbu	x13,250(x15)
+ 2f8:	|  |  |  |  |  |      0fc7ae83          	lw	x29,252(x15)
+ 2fc:	|  |  |  |  |  |      00d59633          	sll	x12,x11,x13
+ 300:	|  |  |  |  |  |      01d67633          	and	x12,x12,x29
+ 304:	|  |  |  |  |  |  /-- 04060c63          	beq	x12,x0,35c <path_planner.c.9b868450+0x20d>
+     ###                 if (dist[*node] + weights[i] < dist[neighbors[i]])
+ 308:	|  |  |  |  |  |  |   00d786b3          	add	x13,x15,x13
+ 30c:	|  |  |  |  |  |  |   0906c603          	lbu	x12,144(x13)
+ 310:	|  |  |  |  |  |  |   00074683          	lbu	x13,0(x14)
+ 314:	|  |  |  |  |  |  |   000e4e03          	lbu	x28,0(x28)
+ 318:	|  |  |  |  |  |  |   010686b3          	add	x13,x13,x16
+ 31c:	|  |  |  |  |  |  |   01c60633          	add	x12,x12,x28
+ 320:	|  |  |  |  |  |  |   0006ce03          	lbu	x28,0(x13)
+ 324:	|  |  |  |  |  |  +-- 03c65c63          	bge	x12,x28,35c <path_planner.c.9b868450+0x20d>
+     ###                     dist[neighbors[i]] = dist[*node] + weights[i];
+ 328:	|  |  |  |  |  |  |   00c68023          	sb	x12,0(x13)
+     ###                     prev[neighbors[i]] = *node;
+ 32c:	|  |  |  |  |  |  |   00074683          	lbu	x13,0(x14)
+ 330:	|  |  |  |  |  |  |   0fa7c603          	lbu	x12,250(x15)
+ 334:	|  |  |  |  |  |  |   00d786b3          	add	x13,x15,x13
+ 338:	|  |  |  |  |  |  |   0cc68c23          	sb	x12,216(x13)
+     ###                     queue[*rear] = neighbors[i];
+ 33c:	|  |  |  |  |  |  |   0f97c683          	lbu	x13,249(x15)
+ 340:	|  |  |  |  |  |  |   00074603          	lbu	x12,0(x14)
+ 344:	|  |  |  |  |  |  |   00d786b3          	add	x13,x15,x13
+ 348:	|  |  |  |  |  |  |   0ac68823          	sb	x12,176(x13)
+     ###                     *rear = (*rear + 1) % V;
+ 34c:	|  |  |  |  |  |  |   0f97c683          	lbu	x13,249(x15)
+ 350:	|  |  |  |  |  |  |   00168693          	addi	x13,x13,1
+ 354:	|  |  |  |  |  |  |   01f6f693          	andi	x13,x13,31
+ 358:	|  |  |  |  |  |  |   0ed78ca3          	sb	x13,249(x15)
+     ###         for (uint8_t i = 0; i < 4; i++)
+ 35c:	|  |  |  |  |  |  \-> 00170713          	addi	x14,x14,1
+ 360:	|  |  |  |  |  |      ff830313          	addi	x6,x6,-8
+ 364:	|  |  |  |  |  \----- f3171ee3          	bne	x14,x17,2a0 <path_planner.c.9b868450+0x151>
+ 368:	\--|--|--|--|-------- e91ff06f          	jal	x0,1f8 <path_planner.c.9b868450+0xa9>
+     ###         path_planned[idx++] = *current;
+ 36c:	   |  |  \--|-------> fec70023          	sb	x12,-32(x14)
+     ###         *current = prev[*current];
+ 370:	   |  |     |         00c68633          	add	x12,x13,x12
+ 374:	   |  |     |         0d864703          	lbu	x14,216(x12)
+ 378:	   |  |     |         0ee68da3          	sb	x14,251(x13)
+ 37c:	   \--|-----|-------- e99ff06f          	jal	x0,214 <path_planner.c.9b868450+0xc5>
+     ###         NODE_POINT = path_planned[i];
+ 380:	      |     \-------> 00f10633          	add	x12,x2,x15
+ 384:	      |               00064603          	lbu	x12,0(x12)
+ 388:	      |               00c68423          	sb	x12,8(x13)
+     ###     for (int i = idx - 1; i >= 0; --i)
+ 38c:	      \-------------- ebdff06f          	jal	x0,248 <path_planner.c.9b868450+0xf9>
+
+00000390 <_set_tls>:
+ 390:	00050213          	addi	x4,x10,0
+ 394:	00008067          	jalr	x0,0(x1)
+
+00000398 <memcpy>:
+ 398:	       00050313          	addi	x6,x10,0
+ 39c:	/----- 00060e63          	beq	x12,x0,3b8 <memcpy+0x20>
+ 3a0:	|  /-> 00058383          	lb	x7,0(x11)
+ 3a4:	|  |   00730023          	sb	x7,0(x6)
+ 3a8:	|  |   fff60613          	addi	x12,x12,-1
+ 3ac:	|  |   00130313          	addi	x6,x6,1
+ 3b0:	|  |   00158593          	addi	x11,x11,1
+ 3b4:	|  \-- fe0616e3          	bne	x12,x0,3a0 <memcpy+0x8>
+ 3b8:	\----> 00008067          	jalr	x0,0(x1)
+
+000003bc <memset>:
+ 3bc:	       00050313          	addi	x6,x10,0
+ 3c0:	/----- 00060a63          	beq	x12,x0,3d4 <memset+0x18>
+ 3c4:	|  /-> 00b30023          	sb	x11,0(x6)
+ 3c8:	|  |   fff60613          	addi	x12,x12,-1
+ 3cc:	|  |   00130313          	addi	x6,x6,1
+ 3d0:	|  \-- fe061ae3          	bne	x12,x0,3c4 <memset+0x8>
+ 3d4:	\----> 00008067          	jalr	x0,0(x1)

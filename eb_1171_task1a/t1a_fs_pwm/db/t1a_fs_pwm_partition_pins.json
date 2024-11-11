@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "pwm_signal",
+					"strict" : false
+				},
+				{
+					"name" : "clk_500Hz",
+					"strict" : false
+				},
+				{
+					"name" : "clk_1MHz",
+					"strict" : false
+				},
+				{
+					"name" : "pulse_width[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pulse_width[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pulse_width[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pulse_width[1]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50MHz",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

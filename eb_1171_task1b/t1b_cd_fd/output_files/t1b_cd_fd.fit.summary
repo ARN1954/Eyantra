@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Sep 20 21:47:08 2024
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : t1b_cd_fd
+Top-level Entity Name : t1b_cd_fd
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 247 / 22,320 ( 1 % )
+    Total combinational functions : 204 / 22,320 ( < 1 % )
+    Dedicated logic registers : 79 / 22,320 ( < 1 % )
+Total registers : 79
+Total pins : 6 / 154 ( 4 % )
+Total virtual pins : 0
+Total memory bits : 0 / 608,256 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

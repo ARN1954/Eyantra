@@ -1,0 +1,44 @@
+|uart_rx
+clk_3125 => rx_parity~reg0.CLK
+clk_3125 => rx_msg[0]~reg0.CLK
+clk_3125 => rx_msg[1]~reg0.CLK
+clk_3125 => rx_msg[2]~reg0.CLK
+clk_3125 => rx_msg[3]~reg0.CLK
+clk_3125 => rx_msg[4]~reg0.CLK
+clk_3125 => rx_msg[5]~reg0.CLK
+clk_3125 => rx_msg[6]~reg0.CLK
+clk_3125 => rx_msg[7]~reg0.CLK
+clk_3125 => pb_flag.CLK
+clk_3125 => parity_bit.CLK
+clk_3125 => bit_index[0].CLK
+clk_3125 => bit_index[1].CLK
+clk_3125 => bit_index[2].CLK
+clk_3125 => data_buffer[0].CLK
+clk_3125 => data_buffer[1].CLK
+clk_3125 => data_buffer[2].CLK
+clk_3125 => data_buffer[3].CLK
+clk_3125 => data_buffer[4].CLK
+clk_3125 => data_buffer[5].CLK
+clk_3125 => data_buffer[6].CLK
+clk_3125 => data_buffer[7].CLK
+clk_3125 => counter[0].CLK
+clk_3125 => counter[1].CLK
+clk_3125 => counter[2].CLK
+clk_3125 => counter[3].CLK
+clk_3125 => counter[4].CLK
+clk_3125 => rx_complete~reg0.CLK
+clk_3125 => rx_sync2.CLK
+clk_3125 => state~5.DATAIN
+rx => rx_sync2.DATAIN
+rx_msg[0] <= rx_msg[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rx_msg[1] <= rx_msg[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rx_msg[2] <= rx_msg[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rx_msg[3] <= rx_msg[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rx_msg[4] <= rx_msg[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rx_msg[5] <= rx_msg[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rx_msg[6] <= rx_msg[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rx_msg[7] <= rx_msg[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rx_parity <= rx_parity~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rx_complete <= rx_complete~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,7 @@
+
+State Machine - |uart_tx|state
+Name state.stop state.parity state.data_bits state.start 
+state.start 0 0 0 0 
+state.data_bits 0 0 1 1 
+state.parity 0 1 0 1 
+state.stop 1 0 0 1 

@@ -1,0 +1,287 @@
+# Reading pref.tcl
+# do t1c_riscv_cpu_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying D:/eyantra/intelFPGAlite/20.01/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:39 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v 
+# -- Compiling module t1c_riscv_cpu
+# 
+# Top level modules:
+# 	t1c_riscv_cpu
+# End time: 12:24:39 on Oct 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/riscv_cpu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:39 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/riscv_cpu.v 
+# -- Compiling module riscv_cpu
+# 
+# Top level modules:
+# 	riscv_cpu
+# End time: 12:24:39 on Oct 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:40 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v 
+# -- Compiling module data_mem
+# 
+# Top level modules:
+# 	data_mem
+# End time: 12:24:40 on Oct 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:40 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v 
+# -- Compiling module reset_ff
+# 
+# Top level modules:
+# 	reset_ff
+# End time: 12:24:40 on Oct 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reg_file.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:40 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reg_file.v 
+# -- Compiling module reg_file
+# 
+# Top level modules:
+# 	reg_file
+# End time: 12:24:40 on Oct 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/mux4.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:40 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/mux4.v 
+# -- Compiling module mux4
+# 
+# Top level modules:
+# 	mux4
+# End time: 12:24:40 on Oct 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/mux2.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:40 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/mux2.v 
+# -- Compiling module mux2
+# 
+# Top level modules:
+# 	mux2
+# End time: 12:24:40 on Oct 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/main_decoder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:40 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/main_decoder.v 
+# -- Compiling module main_decoder
+# 
+# Top level modules:
+# 	main_decoder
+# End time: 12:24:40 on Oct 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/imm_extend.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:40 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/imm_extend.v 
+# -- Compiling module imm_extend
+# 
+# Top level modules:
+# 	imm_extend
+# End time: 12:24:41 on Oct 12,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/datapath.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:41 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/datapath.v 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 12:24:41 on Oct 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/controller.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:41 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/controller.v 
+# -- Compiling module controller
+# 
+# Top level modules:
+# 	controller
+# End time: 12:24:41 on Oct 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu_decoder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:41 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu_decoder.v 
+# -- Compiling module alu_decoder
+# 
+# Top level modules:
+# 	alu_decoder
+# End time: 12:24:41 on Oct 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:41 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 12:24:41 on Oct 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:41 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/adder.v 
+# -- Compiling module adder
+# 
+# Top level modules:
+# 	adder
+# End time: 12:24:41 on Oct 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/instr_mem.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:41 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/instr_mem.v 
+# -- Compiling module instr_mem
+# 
+# Top level modules:
+# 	instr_mem
+# End time: 12:24:42 on Oct 12,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/.test {D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/.test/tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:42 on Oct 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/.test" D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/.test/tb.v 
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 12:24:42 on Oct 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb 
+# Start time: 12:24:42 on Oct 12,2024
+# Loading work.tb
+# Loading work.t1c_riscv_cpu
+# Loading work.riscv_cpu
+# Loading work.controller
+# Loading work.main_decoder
+# Loading work.alu_decoder
+# Loading work.datapath
+# Loading work.reset_ff
+# Loading work.adder
+# Loading work.mux2
+# Loading work.reg_file
+# Loading work.imm_extend
+# Loading work.alu
+# Loading work.mux4
+# Loading work.instr_mem
+# Loading work.data_mem
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: arn19  Hostname: ARN  ProcessID: 20344
+#           Attempting to use alternate WLF file "./wlft5dbv61".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft5dbv61
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 2000 ns
+# 1. addi implementation is correct for x0 
+# 2. addi implementation is correct 
+# 3. slli implementation is correct 
+# 4. slti implementation is correct 
+# 5. sltiu implementation is correct 
+# 6. xori implementation is correct 
+# 7. srli implementation is correct 
+# 8. srai implementation is correct 
+# 9. ori implementation is correct 
+# 10. andi implementation is correct
+# 11. add implementation is correct 
+# 12. sub implementation is correct 
+# 13. sll implementation is correct 
+# 14. slt implementation is correct 
+# 15. sltu implementation is correct 
+# 16. xor implementation is correct 
+# 17. srl implementation is correct 
+# 18. sra implementation is correct 
+# 19. or implementation is correct 
+# 20. and implementation is correct 
+# 21. lui implementation is correct 
+# 22. auipc implementation is correct 
+# 23. sb implementation is correct
+# 24. sh implementation is correct
+# 25. sw implementation is correct
+# 26. lb implementation is correct
+# 27. lh implementation is correct
+# 28. lw implementation is correct
+# 29. lbu implementation is correct
+# 30. lhu implementation is correct
+# 31. blt is executing
+# 31. blt is executing
+# 31. blt is executing
+# 31. blt is executing
+# 31. blt is executing
+# 31. blt is executing
+# 31. blt is executing
+# 31. blt is executing
+# 31. blt is executing
+# 31. blt is executing
+# 31. blt implementation is correct 
+# 32. bge is executing
+# 32. bge is executing
+# 32. bge is executing
+# 32. bge is executing
+# 32. bge is executing
+# 32. bge is executing
+# 32. bge is executing
+# 32. bge is executing
+# 32. bge is executing
+# 32. bge is executing
+# 32. bge is executing
+# 32. bge implementation is correct
+# 33. bltu is executing
+# 33. bltu is executing
+# 33. bltu is executing
+# 33. bltu is executing
+# 33. bltu implementation is correct 
+# 34. bgeu is executing
+# 34. bgeu is executing
+# 34. bgeu is executing
+# 34. bgeu is executing
+# 34. bgeu is executing
+# 34. bgeu implementation is correct 
+# 35. bne is executing
+# 35. bne is executing
+# 35. bne is executing
+# 35. bne is executing
+# 35. bne is executing
+# 35. bne implementation is correct 
+# 36. beq is executing
+# 36. beq is executing
+# 36. beq implementation is correct 
+# 37. jalr implementation is correct 
+# 38. jal implementation is correct 
+# Faulty Instructions =>           0
+# No errors encountered, congratulations!
+# ** Note: $stop    : D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/.test/tb.v(530)
+#    Time: 1705 ns  Iteration: 1  Instance: /tb
+# Break in Module tb at D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/.test/tb.v line 530
+# End time: 12:29:53 on Oct 12,2024, Elapsed time: 0:05:11
+# Errors: 0, Warnings: 2

@@ -1,0 +1,33 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "filter[0]",
+					"strict" : false
+				},
+				{
+					"name" : "filter[1]",
+					"strict" : false
+				},
+				{
+					"name" : "color[0]",
+					"strict" : false
+				},
+				{
+					"name" : "color[1]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_1MHz",
+					"strict" : false
+				},
+				{
+					"name" : "cs_out",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

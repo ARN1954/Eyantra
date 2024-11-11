@@ -1,0 +1,48 @@
+# Reading pref.tcl
+# do AND_GATE_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying D:/eyantra/intelFPGAlite/20.01/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/task0 {D:/eyantra/intelFPGAlite/20.01/projects/task0/and_gate.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:13:24 on Sep 03,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/task0" D:/eyantra/intelFPGAlite/20.01/projects/task0/and_gate.v 
+# -- Compiling module and_gate
+# 
+# Top level modules:
+# 	and_gate
+# End time: 19:13:24 on Sep 03,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/task0 {D:/eyantra/intelFPGAlite/20.01/projects/task0/and_gate_test_bench.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:13:24 on Sep 03,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/task0" D:/eyantra/intelFPGAlite/20.01/projects/task0/and_gate_test_bench.v 
+# -- Compiling module and_gate_test_bench
+# 
+# Top level modules:
+# 	and_gate_test_bench
+# End time: 19:13:24 on Sep 03,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  and_gate_test_bench
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" and_gate_test_bench 
+# Start time: 19:13:24 on Sep 03,2024
+# Loading work.and_gate_test_bench
+# Loading work.and_gate
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# End time: 19:15:21 on Sep 03,2024, Elapsed time: 0:01:57
+# Errors: 0, Warnings: 0

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Oct 15 21:00:55 2024
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : t1b_cd_fd
+Top-level Entity Name : t1b_cd_fd
+Family : Cyclone IV E
+Total logic elements : 195
+    Total combinational functions : 194
+    Dedicated logic registers : 49
+Total registers : 49
+Total pins : 6
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

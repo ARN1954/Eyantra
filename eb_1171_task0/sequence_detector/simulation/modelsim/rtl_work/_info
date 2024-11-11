@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/eyantra/intelFPGAlite/20.01/projects/sequence_detector/sequence_detector/simulation/modelsim
+vsequence_detector
+!s110 1725389763
+!i10b 1
+!s100 67`XnoZW48XL`[1i;h`2N2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I3m2FD9]J=DWfa:8Na=R1<0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1725389701
+8D:/eyantra/intelFPGAlite/20.01/projects/sequence_detector/sequence_detector/sequence_detector.v
+FD:/eyantra/intelFPGAlite/20.01/projects/sequence_detector/sequence_detector/sequence_detector.v
+!i122 0
+L0 3 72
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1725389763.000000
+!s107 D:/eyantra/intelFPGAlite/20.01/projects/sequence_detector/sequence_detector/sequence_detector.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/eyantra/intelFPGAlite/20.01/projects/sequence_detector/sequence_detector|D:/eyantra/intelFPGAlite/20.01/projects/sequence_detector/sequence_detector/sequence_detector.v|
+!i113 1
+Z4 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/sequence_detector/sequence_detector
+Z5 tCvgOpt 0
+vtb
+!s110 1725389764
+!i10b 1
+!s100 JkcG2O^bAn>NKCHHi03zX1
+R1
+I9mW?NM_IM8W;aV<[zebgd2
+R2
+R0
+w1725387625
+8D:/eyantra/intelFPGAlite/20.01/projects/sequence_detector/sequence_detector/simulation/modelsim/tb.v
+FD:/eyantra/intelFPGAlite/20.01/projects/sequence_detector/sequence_detector/simulation/modelsim/tb.v
+!i122 1
+L0 3 94
+R3
+r1
+!s85 0
+31
+!s108 1725389764.000000
+!s107 D:/eyantra/intelFPGAlite/20.01/projects/sequence_detector/sequence_detector/simulation/modelsim/tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/eyantra/intelFPGAlite/20.01/projects/sequence_detector/sequence_detector/simulation/modelsim|D:/eyantra/intelFPGAlite/20.01/projects/sequence_detector/sequence_detector/simulation/modelsim/tb.v|
+!i113 1
+R4
+!s92 -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/sequence_detector/sequence_detector/simulation/modelsim
+R5

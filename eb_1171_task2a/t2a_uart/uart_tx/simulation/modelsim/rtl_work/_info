@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/eyantra/intelFPGAlite/20.01/projects/t2a_uart/uart_tx/simulation/modelsim
+vtb
+Z1 !s110 1729529117
+!i10b 1
+!s100 `H_WkGW2]k`1c^71TY0a=3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IAoMR25NRbV[l^dKCQINl[1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1729109876
+8D:/eyantra/intelFPGAlite/20.01/projects/t2a_uart/uart_tx/.test/tb.v
+FD:/eyantra/intelFPGAlite/20.01/projects/t2a_uart/uart_tx/.test/tb.v
+!i122 1
+L0 3 131
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1729529117.000000
+!s107 D:/eyantra/intelFPGAlite/20.01/projects/t2a_uart/uart_tx/.test/tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t2a_uart/uart_tx/.test|D:/eyantra/intelFPGAlite/20.01/projects/t2a_uart/uart_tx/.test/tb.v|
+!i113 1
+Z6 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t2a_uart/uart_tx/.test
+Z7 tCvgOpt 0
+vuart_tx
+R1
+!i10b 1
+!s100 ^d4hIJ89YG8YUcX[EGoL83
+R2
+I_hZCP]<lBXZCKePD]Ri4e1
+R3
+R0
+w1729196732
+8D:/eyantra/intelFPGAlite/20.01/projects/t2a_uart/uart_tx/code/uart_tx.v
+FD:/eyantra/intelFPGAlite/20.01/projects/t2a_uart/uart_tx/code/uart_tx.v
+!i122 0
+L0 29 90
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/eyantra/intelFPGAlite/20.01/projects/t2a_uart/uart_tx/code/uart_tx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/eyantra/intelFPGAlite/20.01/projects/t2a_uart/uart_tx/code|D:/eyantra/intelFPGAlite/20.01/projects/t2a_uart/uart_tx/code/uart_tx.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/t2a_uart/uart_tx/code
+R7

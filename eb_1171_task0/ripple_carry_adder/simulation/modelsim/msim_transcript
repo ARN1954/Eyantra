@@ -1,0 +1,59 @@
+# Reading pref.tcl
+# do rippel_carry_adder_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying D:/eyantra/intelFPGAlite/20.01/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/rippel_carry_adder {D:/eyantra/intelFPGAlite/20.01/projects/rippel_carry_adder/full_adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:46:27 on Sep 03,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/rippel_carry_adder" D:/eyantra/intelFPGAlite/20.01/projects/rippel_carry_adder/full_adder.v 
+# -- Compiling module full_adder
+# 
+# Top level modules:
+# 	full_adder
+# End time: 22:46:28 on Sep 03,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/rippel_carry_adder {D:/eyantra/intelFPGAlite/20.01/projects/rippel_carry_adder/rippel_carry_adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:46:28 on Sep 03,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/rippel_carry_adder" D:/eyantra/intelFPGAlite/20.01/projects/rippel_carry_adder/rippel_carry_adder.v 
+# -- Compiling module rippel_carry_adder
+# 
+# Top level modules:
+# 	rippel_carry_adder
+# End time: 22:46:28 on Sep 03,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/eyantra/intelFPGAlite/20.01/projects/rippel_carry_adder {D:/eyantra/intelFPGAlite/20.01/projects/rippel_carry_adder/test_bench_rippel_carry_adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:46:28 on Sep 03,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/intelFPGAlite/20.01/projects/rippel_carry_adder" D:/eyantra/intelFPGAlite/20.01/projects/rippel_carry_adder/test_bench_rippel_carry_adder.v 
+# -- Compiling module test_bench_rippel_carry_adder
+# 
+# Top level modules:
+# 	test_bench_rippel_carry_adder
+# End time: 22:46:28 on Sep 03,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  test_bench_rippel_carry_adder
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" test_bench_rippel_carry_adder 
+# Start time: 22:46:28 on Sep 03,2024
+# Loading work.test_bench_rippel_carry_adder
+# Loading work.rippel_carry_adder
+# Loading work.full_adder
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# End time: 22:50:23 on Sep 03,2024, Elapsed time: 0:03:55
+# Errors: 0, Warnings: 0

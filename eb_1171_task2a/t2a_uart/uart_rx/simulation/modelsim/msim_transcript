@@ -1,0 +1,64 @@
+# Reading pref.tcl
+# do uart_rx_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying D:/eyantra/intelFPGAlite/20.01/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/eyantra/eb_1171_task2a/t2a_uart/uart_rx/code {D:/eyantra/eb_1171_task2a/t2a_uart/uart_rx/code/uart_rx.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:23:00 on Nov 10,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/eb_1171_task2a/t2a_uart/uart_rx/code" D:/eyantra/eb_1171_task2a/t2a_uart/uart_rx/code/uart_rx.v 
+# -- Compiling module uart_rx
+# 
+# Top level modules:
+# 	uart_rx
+# End time: 19:23:00 on Nov 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/eyantra/eb_1171_task2a/t2a_uart/uart_rx/.test {D:/eyantra/eb_1171_task2a/t2a_uart/uart_rx/.test/tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:23:00 on Nov 10,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/eyantra/eb_1171_task2a/t2a_uart/uart_rx/.test" D:/eyantra/eb_1171_task2a/t2a_uart/uart_rx/.test/tb.v 
+# -- Compiling module tb
+# ** Warning: D:/eyantra/eb_1171_task2a/t2a_uart/uart_rx/.test/tb.v(45): (vlog-2609) indexed range expression contains whitespace between '+' and ':'.
+# 
+# Top level modules:
+# 	tb
+# End time: 19:23:00 on Nov 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb 
+# Start time: 19:23:00 on Nov 10,2024
+# Loading work.tb
+# Loading work.uart_rx
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fgets'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: D:/eyantra/eb_1171_task2a/t2a_uart/uart_rx/.test/tb.v Line: 31
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: arn19  Hostname: ARN  ProcessID: 13428
+#           Attempting to use alternate WLF file "./wlfthcvxx7".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfthcvxx7
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 550000 ns
+# rx_msg: e,exp_msg:e,rx_parity:0,correct_parity:0
+# rx_msg: Y,exp_msg:Y,rx_parity:0,correct_parity:0
+# rx_msg: R,exp_msg:R,rx_parity:1,correct_parity:1
+# rx_msg: C,exp_msg:C,rx_parity:1,correct_parity:1
+# No errors encountered, congratulations!
+# ** Note: $stop    : D:/eyantra/eb_1171_task2a/t2a_uart/uart_rx/.test/tb.v(128)
+#    Time: 237120 ns  Iteration: 1  Instance: /tb
+# Break in Module tb at D:/eyantra/eb_1171_task2a/t2a_uart/uart_rx/.test/tb.v line 128
+# End time: 19:23:17 on Nov 10,2024, Elapsed time: 0:00:17
+# Errors: 0, Warnings: 3

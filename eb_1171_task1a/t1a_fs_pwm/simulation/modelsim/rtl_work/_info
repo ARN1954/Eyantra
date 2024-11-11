@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/eyantra/eb_1171_task1a/t1a_fs_pwm/simulation/modelsim
+vfrequency_scaler
+Z1 !s110 1729194836
+!i10b 1
+!s100 zHLFf:Lm2oSJhL>IoXNRI0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+InVDG=<JmQV>Xf:Rnz92Bk3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1726163917
+8D:/eyantra/eb_1171_task1a/t1a_fs_pwm/code/frequency_scaler.v
+FD:/eyantra/eb_1171_task1a/t1a_fs_pwm/code/frequency_scaler.v
+!i122 2
+L0 20 26
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1729194836.000000
+!s107 D:/eyantra/eb_1171_task1a/t1a_fs_pwm/code/frequency_scaler.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/eyantra/eb_1171_task1a/t1a_fs_pwm/code|D:/eyantra/eb_1171_task1a/t1a_fs_pwm/code/frequency_scaler.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+D:/eyantra/eb_1171_task1a/t1a_fs_pwm/code
+Z8 tCvgOpt 0
+vpwm_generator
+R1
+!i10b 1
+!s100 H3<7KConoS@=M_?gMOCf63
+R2
+I`8c?k[_Al1F3P@z]>@2603
+R3
+R0
+w1726164146
+8D:/eyantra/eb_1171_task1a/t1a_fs_pwm/code/pwm_generator.v
+FD:/eyantra/eb_1171_task1a/t1a_fs_pwm/code/pwm_generator.v
+!i122 1
+L0 19 38
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/eyantra/eb_1171_task1a/t1a_fs_pwm/code/pwm_generator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/eyantra/eb_1171_task1a/t1a_fs_pwm/code|D:/eyantra/eb_1171_task1a/t1a_fs_pwm/code/pwm_generator.v|
+!i113 1
+R6
+R7
+R8
+vt1a_fs_pwm_bdf
+R1
+!i10b 1
+!s100 BzDROZiez6483=A91SzkV2
+R2
+I<YDY1hcSTCoA_TQj<0^7G1
+R3
+R0
+w1726059886
+8D:/eyantra/eb_1171_task1a/t1a_fs_pwm/code/t1a_fs_pwm_bdf.v
+FD:/eyantra/eb_1171_task1a/t1a_fs_pwm/code/t1a_fs_pwm_bdf.v
+!i122 0
+L0 20 35
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/eyantra/eb_1171_task1a/t1a_fs_pwm/code/t1a_fs_pwm_bdf.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/eyantra/eb_1171_task1a/t1a_fs_pwm/code|D:/eyantra/eb_1171_task1a/t1a_fs_pwm/code/t1a_fs_pwm_bdf.v|
+!i113 1
+R6
+R7
+R8
+vtb
+!s110 1729194837
+!i10b 1
+!s100 =jSl53o6MIUkOM41K5DW53
+R2
+IAHdR4JWIJ0GcH^K12I;f23
+R3
+R0
+w1726059171
+8D:/eyantra/eb_1171_task1a/t1a_fs_pwm/.test/tb.v
+FD:/eyantra/eb_1171_task1a/t1a_fs_pwm/.test/tb.v
+!i122 3
+L0 4 97
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/eyantra/eb_1171_task1a/t1a_fs_pwm/.test/tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/eyantra/eb_1171_task1a/t1a_fs_pwm/.test|D:/eyantra/eb_1171_task1a/t1a_fs_pwm/.test/tb.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+D:/eyantra/eb_1171_task1a/t1a_fs_pwm/.test
+R8

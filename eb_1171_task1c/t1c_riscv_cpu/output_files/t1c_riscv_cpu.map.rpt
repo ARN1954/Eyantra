@@ -1,0 +1,1019 @@
+Analysis & Synthesis report for t1c_riscv_cpu
+Sat Oct 12 12:30:33 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg
+ 12. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:pcadd4
+ 13. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:pcaddbranch
+ 14. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:pcmux
+ 15. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:jalrmux
+ 16. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|reg_file:rf
+ 17. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:srcbmux
+ 18. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|alu:alu
+ 19. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:aluadder
+ 20. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:aluipcmux
+ 21. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux4:resultmux
+ 22. Parameter Settings for User Entity Instance: instr_mem:instrmem
+ 23. Parameter Settings for User Entity Instance: data_mem:datamem
+ 24. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux2:aluipcmux"
+ 25. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:aluadder"
+ 26. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4"
+ 27. Port Connectivity Checks: "riscv_cpu:rvcpu|controller:c"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+ 31. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Oct 12 12:30:33 2024       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; t1c_riscv_cpu                               ;
+; Top-level Entity Name              ; t1c_riscv_cpu                               ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 7,584                                       ;
+;     Total combinational functions  ; 4,576                                       ;
+;     Dedicated logic registers      ; 3,104                                       ;
+; Total registers                    ; 3104                                        ;
+; Total pins                         ; 228                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; t1c_riscv_cpu      ; t1c_riscv_cpu      ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.02        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.6%      ;
+;     Processor 3            ;   0.5%      ;
+;     Processor 4            ;   0.4%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
++----------------------------------+-----------------+---------------------------------------------+--------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                   ; File Name with Absolute Path                                                         ; Library ;
++----------------------------------+-----------------+---------------------------------------------+--------------------------------------------------------------------------------------+---------+
+; code/t1c_riscv_cpu.v             ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v           ;         ;
+; code/riscv_cpu.v                 ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/riscv_cpu.v               ;         ;
+; code/instr_mem.v                 ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/instr_mem.v               ;         ;
+; code/data_mem.v                  ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v                ;         ;
+; code/components/reset_ff.v       ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v     ;         ;
+; code/components/reg_file.v       ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reg_file.v     ;         ;
+; code/components/mux4.v           ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/mux4.v         ;         ;
+; code/components/mux2.v           ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/mux2.v         ;         ;
+; code/components/main_decoder.v   ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/main_decoder.v ;         ;
+; code/components/imm_extend.v     ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/imm_extend.v   ;         ;
+; code/components/datapath.v       ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/datapath.v     ;         ;
+; code/components/controller.v     ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/controller.v   ;         ;
+; code/components/alu_decoder.v    ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu_decoder.v  ;         ;
+; code/components/alu.v            ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu.v          ;         ;
+; code/components/adder.v          ; yes             ; User Verilog HDL File                       ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/adder.v        ;         ;
+; code/rv32i_test.hex              ; yes             ; Auto-Found Hexadecimal (Intel-Format) File  ; D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/rv32i_test.hex            ;         ;
++----------------------------------+-----------------+---------------------------------------------+--------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 7,584     ;
+;                                             ;           ;
+; Total combinational functions               ; 4576      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 3870      ;
+;     -- 3 input functions                    ; 616       ;
+;     -- <=2 input functions                  ; 90        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 4403      ;
+;     -- arithmetic mode                      ; 173       ;
+;                                             ;           ;
+; Total registers                             ; 3104      ;
+;     -- Dedicated logic registers            ; 3104      ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 228       ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 3104      ;
+; Total fan-out                               ; 27270     ;
+; Average fan-out                             ; 3.35      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                   ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                          ; Entity Name   ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------+---------------+--------------+
+; |t1c_riscv_cpu               ; 4576 (66)           ; 3104 (0)                  ; 0           ; 0            ; 0       ; 0         ; 228  ; 0            ; |t1c_riscv_cpu                                               ; t1c_riscv_cpu ; work         ;
+;    |data_mem:datamem|        ; 1881 (1881)         ; 2048 (2048)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|data_mem:datamem                              ; data_mem      ; work         ;
+;    |instr_mem:instrmem|      ; 196 (196)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|instr_mem:instrmem                            ; instr_mem     ; work         ;
+;    |riscv_cpu:rvcpu|         ; 2433 (0)            ; 1056 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu                               ; riscv_cpu     ; work         ;
+;       |controller:c|         ; 34 (4)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu|controller:c                  ; controller    ; work         ;
+;          |alu_decoder:ad|    ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu|controller:c|alu_decoder:ad   ; alu_decoder   ; work         ;
+;          |main_decoder:md|   ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu|controller:c|main_decoder:md  ; main_decoder  ; work         ;
+;       |datapath:dp|          ; 2399 (0)            ; 1056 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp                   ; datapath      ; work         ;
+;          |adder:aluadder|    ; 20 (20)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|adder:aluadder    ; adder         ; work         ;
+;          |adder:pcadd4|      ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|adder:pcadd4      ; adder         ; work         ;
+;          |adder:pcaddbranch| ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|adder:pcaddbranch ; adder         ; work         ;
+;          |alu:alu|           ; 712 (712)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu           ; alu           ; work         ;
+;          |imm_extend:ext|    ; 21 (21)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|imm_extend:ext    ; imm_extend    ; work         ;
+;          |mux2:jalrmux|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|mux2:jalrmux      ; mux2          ; work         ;
+;          |mux2:srcbmux|      ; 35 (35)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|mux2:srcbmux      ; mux2          ; work         ;
+;          |mux4:resultmux|    ; 87 (87)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|mux4:resultmux    ; mux4          ; work         ;
+;          |reg_file:rf|       ; 1429 (1429)         ; 1024 (1024)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|reg_file:rf       ; reg_file      ; work         ;
+;          |reset_ff:pcreg|    ; 31 (31)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg    ; reset_ff      ; work         ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                        ;
++-----------------------------------------------------------+-------------------------------------------------------+------------------------+
+; Latch Name                                                ; Latch Enable Signal                                   ; Free of Timing Hazards ;
++-----------------------------------------------------------+-------------------------------------------------------+------------------------+
+; riscv_cpu:rvcpu|controller:c|alu_decoder:ad|ALUControl[2] ; riscv_cpu:rvcpu|controller:c|alu_decoder:ad|Selector3 ; yes                    ;
+; riscv_cpu:rvcpu|controller:c|alu_decoder:ad|ALUControl[3] ; riscv_cpu:rvcpu|controller:c|alu_decoder:ad|Selector3 ; yes                    ;
+; riscv_cpu:rvcpu|controller:c|alu_decoder:ad|ALUControl[0] ; riscv_cpu:rvcpu|controller:c|alu_decoder:ad|Selector3 ; yes                    ;
+; riscv_cpu:rvcpu|controller:c|alu_decoder:ad|ALUControl[1] ; riscv_cpu:rvcpu|controller:c|alu_decoder:ad|Selector3 ; yes                    ;
+; data_mem:datamem|rd_data_mem[0]                           ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[1]                           ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[2]                           ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[3]                           ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[4]                           ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[5]                           ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[6]                           ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[7]                           ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[8]                           ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[9]                           ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[10]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[11]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[12]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[13]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[14]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[15]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[16]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[17]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[18]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[19]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[20]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[21]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[22]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[23]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[24]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[25]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[26]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[27]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[28]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[29]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[30]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; data_mem:datamem|rd_data_mem[31]                          ; data_mem:datamem|Mux2065                              ; yes                    ;
+; Number of user-specified and inferred latches = 36        ;                                                       ;                        ;
++-----------------------------------------------------------+-------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 3104  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 30    ;
+; Number of registers using Asynchronous Clear ; 32    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 3074  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[0]  ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[28] ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[63][5]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[62][5]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[61][3]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[60][3]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[59][5]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[58][5]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[57][4]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[56][3]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[55][2]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[54][6]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[53][0]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[52][4]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[51][2]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[50][1]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[49][3]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[48][3]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[47][2]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[46][1]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[45][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[44][2]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[43][5]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[42][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[41][4]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[40][5]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[39][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[38][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[37][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[36][3]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[35][5]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[34][2]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[33][2]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[32][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[31][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[30][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[29][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[28][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[27][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[26][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[25][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[24][0]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[23][5]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[22][5]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[21][2]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[20][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[19][3]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[18][0]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[17][5]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[16][2]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[15][5]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[14][1]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[13][3]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[12][7]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[11][6]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[10][6]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[9][6]                  ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[8][4]                  ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[7][5]                  ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[6][7]                  ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[5][1]                  ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[4][0]                  ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[3][1]                  ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[2][1]                  ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[1][6]                  ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[0][6]                  ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[0][11]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[1][15]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[2][13]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[3][14]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[4][14]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[5][14]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[6][9]                  ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[7][10]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[8][9]                  ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[9][9]                  ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[10][14]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[11][10]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[12][12]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[13][8]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[14][8]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[15][10]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[16][12]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[17][10]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[18][9]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[19][9]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[20][15]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[21][8]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[22][8]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[23][12]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[24][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[25][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[26][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[27][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[28][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[29][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[30][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[31][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[32][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[33][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[34][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[35][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[36][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[37][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[38][11]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[39][14]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[40][15]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[41][10]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[42][12]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[43][10]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[44][8]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[45][10]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[46][12]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[47][10]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[48][8]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[49][8]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[50][14]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[51][12]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[52][10]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[53][12]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[54][9]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[55][12]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[56][12]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[57][8]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[58][12]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[59][13]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[60][14]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[61][8]                 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[62][15]                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[63][8]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[0][24]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[1][26]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[2][26]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[3][26]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[4][26]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[5][26]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[6][26]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[7][26]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[8][26]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[9][26]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[10][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[11][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[12][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[13][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[14][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[15][29]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[16][28]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[17][30]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[18][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[19][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[20][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[21][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[22][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[23][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[24][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[25][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[26][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[27][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[28][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[29][28]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[30][25]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[31][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[32][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[33][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[34][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[35][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[36][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[37][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[38][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[39][30]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[40][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[41][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[42][29]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[43][27]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[44][30]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[45][24]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[46][24]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[47][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[48][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[49][24]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[50][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[51][25]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[52][24]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[53][28]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[54][25]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[55][25]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[56][25]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[57][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[58][29]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[59][27]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[60][27]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[61][26]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[62][31]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[63][28]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[63][18]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[62][18]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[61][17]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[60][21]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[59][19]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[58][22]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[57][20]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[56][20]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[55][23]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[54][17]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[53][23]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[52][20]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[51][18]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[50][21]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[49][18]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[48][20]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[47][19]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[46][20]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[45][19]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[44][18]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[43][20]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[42][23]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[41][23]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[40][19]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[39][18]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[38][22]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[37][17]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[36][21]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[35][20]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[34][18]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[33][23]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[32][23]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[31][19]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[30][16]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[29][18]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[28][17]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[27][23]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[26][23]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[25][17]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[24][17]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[23][21]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[22][23]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[21][22]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[20][22]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[19][22]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[18][20]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[17][20]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[16][20]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[15][17]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[14][20]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[13][20]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[12][19]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[11][22]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[10][19]                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[9][20]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[8][18]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[7][22]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[6][17]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[5][20]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[4][18]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[3][18]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[2][19]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[1][19]                 ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |t1c_riscv_cpu|data_mem:datamem|data_ram[0][19]                 ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[2]  ;
+; 5:1                ; 20 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[18] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[1]  ;
+; 64:1               ; 25 bits   ; 1050 LEs      ; 1050 LEs             ; 0 LEs                  ; No         ; |t1c_riscv_cpu|data_mem:datamem|Mux2113                         ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |t1c_riscv_cpu|data_mem:datamem|Mux2069                         ;
+; 20:1               ; 7 bits    ; 91 LEs        ; 49 LEs               ; 42 LEs                 ; No         ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux10        ;
+; 19:1               ; 8 bits    ; 96 LEs        ; 56 LEs               ; 40 LEs                 ; No         ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux22        ;
+; 21:1               ; 4 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux4         ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 28 LEs               ; 24 LEs                 ; No         ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux26        ;
+; 22:1               ; 2 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux3         ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |t1c_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux29        ;
+; 68:1               ; 7 bits    ; 315 LEs       ; 308 LEs              ; 7 LEs                  ; No         ; |t1c_riscv_cpu|data_mem:datamem|Mux2076                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:pcadd4 ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:pcaddbranch ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:pcmux ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:jalrmux ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|reg_file:rf ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:srcbmux ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|alu:alu ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:aluadder ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:aluipcmux ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux4:resultmux ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instr_mem:instrmem ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                         ;
+; ADDR_WIDTH     ; 32    ; Signed Integer                         ;
+; MEM_SIZE       ; 512   ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_mem:datamem ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                       ;
+; ADDR_WIDTH     ; 32    ; Signed Integer                       ;
+; MEM_SIZE       ; 64    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux2:aluipcmux" ;
++-----------+-------+----------+-----------------------------------------+
+; Port      ; Type  ; Severity ; Details                                 ;
++-----------+-------+----------+-----------------------------------------+
+; d1[11..0] ; Input ; Info     ; Stuck at GND                            ;
++-----------+-------+----------+-----------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:aluadder" ;
++----------+-------+----------+------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                  ;
++----------+-------+----------+------------------------------------------+
+; a[11..0] ; Input ; Info     ; Stuck at GND                             ;
++----------+-------+----------+------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4" ;
++----------+-------+----------+----------------------------------------+
+; Port     ; Type  ; Severity ; Details                                ;
++----------+-------+----------+----------------------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND                           ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND                           ;
+; b[2]     ; Input ; Info     ; Stuck at VCC                           ;
++----------+-------+----------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|controller:c"                                                       ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Jump ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 228                         ;
+; cycloneiii_ff         ; 3104                        ;
+;     CLR SLD           ; 30                          ;
+;     ENA               ; 3072                        ;
+;     ENA CLR           ; 2                           ;
+; cycloneiii_lcell_comb ; 4576                        ;
+;     arith             ; 173                         ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 143                         ;
+;     normal            ; 4403                        ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 59                          ;
+;         3 data inputs ; 473                         ;
+;         4 data inputs ; 3870                        ;
+;                       ;                             ;
+; Max LUT depth         ; 29.00                       ;
+; Average LUT depth     ; 19.25                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:20     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sat Oct 12 12:30:01 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off t1c_riscv_cpu -c t1c_riscv_cpu
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file .test/tb.v
+    Info (12023): Found entity 1: tb File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/.test/tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file code/t1c_riscv_cpu.v
+    Info (12023): Found entity 1: t1c_riscv_cpu File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/riscv_cpu.v
+    Info (12023): Found entity 1: riscv_cpu File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/riscv_cpu.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/instr_mem.v
+    Info (12023): Found entity 1: instr_mem File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/instr_mem.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/data_mem.v
+    Info (12023): Found entity 1: data_mem File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/reset_ff.v
+    Info (12023): Found entity 1: reset_ff File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/reg_file.v
+    Info (12023): Found entity 1: reg_file File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reg_file.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/mux4.v
+    Info (12023): Found entity 1: mux4 File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/mux4.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/mux3.v
+    Info (12023): Found entity 1: mux3 File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/mux3.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/mux2.v
+    Info (12023): Found entity 1: mux2 File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/mux2.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/main_decoder.v
+    Info (12023): Found entity 1: main_decoder File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/main_decoder.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/imm_extend.v
+    Info (12023): Found entity 1: imm_extend File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/imm_extend.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/datapath.v
+    Info (12023): Found entity 1: datapath File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/datapath.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/controller.v
+    Info (12023): Found entity 1: controller File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/controller.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/alu_decoder.v
+    Info (12023): Found entity 1: alu_decoder File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu_decoder.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/alu.v
+    Info (12023): Found entity 1: alu File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/adder.v
+    Info (12023): Found entity 1: adder File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/adder.v Line: 4
+Warning (10236): Verilog HDL Implicit Net warning at riscv_cpu.v(19): created implicit net for "PCSrc" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/riscv_cpu.v Line: 19
+Info (12127): Elaborating entity "t1c_riscv_cpu" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at t1c_riscv_cpu.v(24): truncated value with size 32 to match size of target (1) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 24
+Info (12128): Elaborating entity "riscv_cpu" for hierarchy "riscv_cpu:rvcpu" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 20
+Info (12128): Elaborating entity "controller" for hierarchy "riscv_cpu:rvcpu|controller:c" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/riscv_cpu.v Line: 20
+Info (12128): Elaborating entity "main_decoder" for hierarchy "riscv_cpu:rvcpu|controller:c|main_decoder:md" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/controller.v Line: 21
+Warning (10270): Verilog HDL Case Statement warning at main_decoder.v(29): incomplete case statement has no default case item File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/main_decoder.v Line: 29
+Info (12128): Elaborating entity "alu_decoder" for hierarchy "riscv_cpu:rvcpu|controller:c|alu_decoder:ad" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/controller.v Line: 23
+Warning (10270): Verilog HDL Case Statement warning at alu_decoder.v(15): incomplete case statement has no default case item File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu_decoder.v Line: 15
+Warning (10240): Verilog HDL Always Construct warning at alu_decoder.v(13): inferring latch(es) for variable "ALUControl", which holds its previous value in one or more paths through the always construct File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu_decoder.v Line: 13
+Info (10041): Inferred latch for "ALUControl[0]" at alu_decoder.v(13) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu_decoder.v Line: 13
+Info (10041): Inferred latch for "ALUControl[1]" at alu_decoder.v(13) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu_decoder.v Line: 13
+Info (10041): Inferred latch for "ALUControl[2]" at alu_decoder.v(13) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu_decoder.v Line: 13
+Info (10041): Inferred latch for "ALUControl[3]" at alu_decoder.v(13) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu_decoder.v Line: 13
+Info (12128): Elaborating entity "datapath" for hierarchy "riscv_cpu:rvcpu|datapath:dp" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/riscv_cpu.v Line: 24
+Info (12128): Elaborating entity "reset_ff" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/datapath.v Line: 23
+Info (12128): Elaborating entity "adder" for hierarchy "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/datapath.v Line: 24
+Info (12128): Elaborating entity "mux2" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux2:pcmux" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/datapath.v Line: 26
+Info (12128): Elaborating entity "reg_file" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reg_file:rf" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/datapath.v Line: 30
+Info (12128): Elaborating entity "imm_extend" for hierarchy "riscv_cpu:rvcpu|datapath:dp|imm_extend:ext" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/datapath.v Line: 31
+Info (12128): Elaborating entity "alu" for hierarchy "riscv_cpu:rvcpu|datapath:dp|alu:alu" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/datapath.v Line: 35
+Info (12128): Elaborating entity "mux4" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/datapath.v Line: 42
+Info (12128): Elaborating entity "instr_mem" for hierarchy "instr_mem:instrmem" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 21
+Warning (10850): Verilog HDL warning at instr_mem.v(14): number of words (79) in memory file does not match the number of elements in the address range [0:511] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/instr_mem.v Line: 14
+Warning (10030): Net "instr_ram.data_a" at instr_mem.v(10) has no driver or initial value, using a default initial value '0' File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/instr_mem.v Line: 10
+Warning (10030): Net "instr_ram.waddr_a" at instr_mem.v(10) has no driver or initial value, using a default initial value '0' File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/instr_mem.v Line: 10
+Warning (10030): Net "instr_ram.we_a" at instr_mem.v(10) has no driver or initial value, using a default initial value '0' File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/instr_mem.v Line: 10
+Info (12128): Elaborating entity "data_mem" for hierarchy "data_mem:datamem" File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 22
+Warning (10270): Verilog HDL Case Statement warning at data_mem.v(53): incomplete case statement has no default case item File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 53
+Warning (10270): Verilog HDL Case Statement warning at data_mem.v(67): incomplete case statement has no default case item File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 67
+Warning (10270): Verilog HDL Case Statement warning at data_mem.v(43): incomplete case statement has no default case item File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Warning (10240): Verilog HDL Always Construct warning at data_mem.v(43): inferring latch(es) for variable "rd_data_mem", which holds its previous value in one or more paths through the always construct File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[0]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[1]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[2]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[3]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[4]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[5]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[6]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[7]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[8]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[9]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[10]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[11]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[12]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[13]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[14]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[15]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[16]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[17]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[18]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[19]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[20]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[21]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[22]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[23]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[24]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[25]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[26]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[27]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[28]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[29]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[30]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (10041): Inferred latch for "rd_data_mem[31]" at data_mem.v(43) File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|reg_file_arr" is uninferred due to asynchronous read logic File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reg_file.v Line: 16
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/db/t1c_riscv_cpu.ram0_instr_mem_8ff0214b.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (13012): Latch riscv_cpu:rvcpu|controller:c|alu_decoder:ad|ALUControl[2] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu_decoder.v Line: 13
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch riscv_cpu:rvcpu|controller:c|alu_decoder:ad|ALUControl[3] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu_decoder.v Line: 13
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch riscv_cpu:rvcpu|controller:c|alu_decoder:ad|ALUControl[0] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu_decoder.v Line: 13
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch riscv_cpu:rvcpu|controller:c|alu_decoder:ad|ALUControl[1] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/alu_decoder.v Line: 13
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[0] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 5
+Warning (13012): Latch data_mem:datamem|rd_data_mem[1] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 5
+Warning (13012): Latch data_mem:datamem|rd_data_mem[2] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 5
+Warning (13012): Latch data_mem:datamem|rd_data_mem[3] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 5
+Warning (13012): Latch data_mem:datamem|rd_data_mem[4] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 5
+Warning (13012): Latch data_mem:datamem|rd_data_mem[5] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 5
+Warning (13012): Latch data_mem:datamem|rd_data_mem[6] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 5
+Warning (13012): Latch data_mem:datamem|rd_data_mem[7] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[8] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[9] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[10] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[11] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[12] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[13] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[14] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[15] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[16] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[17] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[18] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[19] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[20] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[21] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[22] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[23] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[24] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[25] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[26] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[27] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[28] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[29] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[30] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Warning (13012): Latch data_mem:datamem|rd_data_mem[31] has unsafe behavior File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/data_mem.v Line: 43
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] File: D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/code/components/reset_ff.v Line: 12
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/output_files/t1c_riscv_cpu.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 7876 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 67 input pins
+    Info (21059): Implemented 161 output pins
+    Info (21061): Implemented 7648 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 87 warnings
+    Info: Peak virtual memory: 4809 megabytes
+    Info: Processing ended: Sat Oct 12 12:30:33 2024
+    Info: Elapsed time: 00:00:32
+    Info: Total CPU time (on all processors): 00:00:33
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/eyantra/intelFPGAlite/20.01/projects/t1c_riscv_cpu/output_files/t1c_riscv_cpu.map.smsg.
+
+

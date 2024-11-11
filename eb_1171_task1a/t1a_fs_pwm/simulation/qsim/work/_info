@@ -1,0 +1,57 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/eyantra/intelFPGAlite/20.01/projects/t1a_fs_pwm/simulation/qsim
+vt1a_fs_pwm_bdf
+Z1 !s110 1726138828
+!i10b 1
+!s100 `GmJIn1Mc@2VajzeAQ:a`3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IAUQfISST<TdL13G7mV]8E2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1726138826
+8t1a_fs_pwm.vo
+Ft1a_fs_pwm.vo
+!i122 0
+L0 32 1651
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1726138828.000000
+!s107 t1a_fs_pwm.vo|
+!s90 -work|work|t1a_fs_pwm.vo|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vt1a_fs_pwm_bdf_vlg_vec_tst
+R1
+!i10b 1
+!s100 DYX=fgTS:Ub1dWTd5cjRg0
+R2
+I2mHTJ_1K;`<:cFQg4Y<jM1
+R3
+R0
+w1726138825
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 1
+L0 30 52
+R4
+r1
+!s85 0
+31
+R5
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R6
+R7

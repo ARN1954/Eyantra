@@ -1,0 +1,57 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/eyantra/intelFPGAlite/20.01/projects/task0/simulation/qsim
+vand_gate
+Z1 !s110 1725371470
+!i10b 1
+!s100 [92>DQ_m<c7NiiFf]>O6a3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IJ4f;2A21L9UGXA8GQeP8:1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1725371469
+8AND_GATE.vo
+FAND_GATE.vo
+!i122 0
+L0 32 74
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1725371470.000000
+!s107 AND_GATE.vo|
+!s90 -work|work|AND_GATE.vo|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vand_gate_vlg_vec_tst
+R1
+!i10b 1
+!s100 =KlnlPcNF;[HH_[m_LaSQ3
+R2
+IemVz0eeolI`:A=Y=SLFU=3
+R3
+R0
+w1725371468
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 1
+L0 30 42
+R4
+r1
+!s85 0
+31
+R5
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R6
+R7
